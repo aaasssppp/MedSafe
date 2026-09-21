@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedSafe - Medical Report Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Markdown parser for clinical tables and structured summaries -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- ============================================================ -->
+        <!-- LEFT SIDEBAR                                                 -->
+        <!-- ============================================================ -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <span class="brand-icon">🩺</span>
+                    <div>
+                        <h1 class="brand-title">MedSafe</h1>
+                        <span class="brand-subtitle">Medical Report Assistant</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upload-section">
+                <input
+                    type="file"
+                    id="pdf-upload"
+                    accept=".pdf"
+                    multiple
+                    hidden>
+
+                <button class="btn btn-primary" onclick="document.getElementById('pdf-upload').click()">
+                    <span>📄</span> Upload Medical Reports
+                </button>
+
+                <div class="drop-zone" id="drop-zone">
+                    <span class="drop-icon">📥</span>
+                    <span class="drop-text">Drag & drop medical PDFs here</span>
+                </div>
+            </div>
+
+            <div class="documents-section">
+                <div class="section-header">
+                    <h3>Uploaded Reports</h3>
+                    <span class="badge" id="report-count">0</span>
+                </div>
+
+                <div id="pdf-list" class="pdf-list">
+                    <div class="empty-state" id="empty-docs-msg">
+                        No reports uploaded yet. Upload a laboratory or clinical PDF report to begin.
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-actions">
+                <button class="btn btn-action" id="process-btn" onclick="processReports()">
+                    <span id="process-spinner" class="spinner hidden"></span>
+                    <span id="process-btn-text">⚡ Process Reports</span>
+                </button>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="kb-status-card" id="kb-status-card">
+                    <div class="kb-header">
+                        <span class="status-dot" id="kb-dot"></span>
+                        <span class="kb-title">Medical Knowledge Base</span>
+                    </div>
+                    <div class="kb-details" id="kb-details">Checking status...</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ============================================================ -->
+        <!-- MAIN CHAT & ANALYSIS AREA                                   -->
+        <!-- ============================================================ -->
+        <main class="main">
+            <header class="main-header">
+                <div class="header-info">
+                    <h2>Patient Clinical Assistant</h2>
+                    <span class="session-badge" id="session-badge">No active report</span>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="clearChat()">
+                        🗑️ Clear Chat
+                    </button>
+                </div>
+            </header>
+
+            <div class="medical-disclaimer-banner">
+                <span>🛡️</span>
+                <p>
+                    <strong>Medical Safety Notice:</strong> MedSafe provides educational explanations to help you understand your laboratory findings. It does not provide clinical diagnoses or prescribe medication. Always consult your qualified healthcare provider.
+                </p>
+            </div>
+
+            <!-- Chat & Report Display Container -->
+            <div id="chat-box" class="chat-box">
+                <!-- Welcome Message -->
+                <div class="bot-msg-wrapper">
+                    <div class="bot-avatar">🩺</div>
+                    <div class="bot-msg">
+                        <div class="bot-content">
+                            <h3>Welcome to MedSafe</h3>
+                            <p>I am your medical report understanding assistant. Here is how to get started:</p>
+                            <ol>
+                                <li><strong>Upload</strong> your laboratory report, blood test, or metabolic panel in the left sidebar.</li>
+                                <li>Click <strong>"Process Reports"</strong> to extract data (with automatic OCR for scanned documents) and generate an initial clinical analysis.</li>
+                                <li><strong>Ask questions</strong> in plain language about your tests, reference intervals, or clinical terms.</li>
+                            </ol>
+                            <p>All answers are cross-referenced with your report and verified medical literature.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Suggestion Chips -->
+            <div class="suggestion-chips" id="suggestion-chips">
+                <button class="chip" onclick="askSuggestion(this.innerText)">What values are outside reference range?</button>
+                <button class="chip" onclick="askSuggestion(this.innerText)">Explain my HbA1c and glucose levels</button>
+                <button class="chip" onclick="askSuggestion(this.innerText)">What does my lipid panel indicate?</button>
+                <button class="chip" onclick="askSuggestion(this.innerText)">Which questions should I ask my doctor?</button>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="message-input"
+                    placeholder="Ask a question about your medical report or laboratory results..."
+                    autocomplete="off">
+
+                <button class="btn btn-send" id="send-btn" onclick="sendMessage()">
+                    <span>Send</span>
+                    <span class="send-arrow">➤</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

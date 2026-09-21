@@ -1,0 +1,53 @@
+{
+  "blood_tests.pdf": {
+    "file": "blood_tests.pdf",
+    "hash": "68fefed811a8b866b6d5b7391d69c9c186f9f7e17485e36ae60807c59373979c",
+    "processed_at": "2026-09-21T21:25:17.174277",
+    "chunks": 3,
+    "chunk_ids": [
+      "blood_tests.pdf__chunk_0",
+      "blood_tests.pdf__chunk_1",
+      "blood_tests.pdf__chunk_2"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "diabetes.pdf": {
+    "file": "diabetes.pdf",
+    "hash": "45657b44a1f6ce4dd54bdc130e9bf0a96d11c6f501d16571a96c2d2455357eb9",
+    "processed_at": "2026-09-21T21:25:17.198957",
+    "chunks": 2,
+    "chunk_ids": [
+      "diabetes.pdf__chunk_0",
+      "diabetes.pdf__chunk_1"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "hypertension.pdf": {
+    "file": "hypertension.pdf",
+    "hash": "d57025f198f5330f2a6014f002ec002d4e79aa1aa74bcc0e628648dea1c18cc3",
+    "processed_at": "2026-09-21T21:25:17.225507",
+    "chunks": 3,
+    "chunk_ids": [
+      "hypertension.pdf__chunk_0",
+      "hypertension.pdf__chunk_1",
+      "hypertension.pdf__chunk_2"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "medications.pdf": {
+    "file": "medications.pdf",
+    "hash": "15165354e5a5978a2158137039d6024da4007d80d08fa1f20ce573f2866d9333",
+    "processed_at": "2026-09-21T21:27:25.240479",
+    "chunks": 3,
+    "chunk_ids": [
+      "medications.pdf__chunk_0",
+      "medications.pdf__chunk_1",
+      "medications.pdf__chunk_2"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  }
+}

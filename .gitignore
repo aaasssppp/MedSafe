@@ -1,0 +1,20 @@
+# Environment / secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# Generated/local data
+data/uploads/
+data/processed/
+
+# Generated vector storess
+data/vector_store

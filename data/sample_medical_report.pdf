@@ -1,0 +1,149 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 2870 >>
+stream
+BT
+50 740 Td
+14 TL
+/F2 16 Tf
+(METROPOLITAN HEALTHCARE CLINICAL LABORATORY) Tj
+T*
+T*
+T*
+/F2 12 Tf
+(PATIENT INFORMATION) Tj
+T*
+/F1 10 Tf
+(Patient Name: Jane Doe   Age: 52   Sex: Female) Tj
+T*
+/F1 10 Tf
+(Ordering Physician: Dr. Robert Vance, MD) Tj
+T*
+/F1 10 Tf
+(Collection Date: 2026-09-18   Report Date: 2026-09-19) Tj
+T*
+/F1 10 Tf
+(Facility: Metro Diagnostics Lab, New York, NY) Tj
+T*
+T*
+/F2 12 Tf
+(COMPREHENSIVE METABOLIC PANEL & GLYCEMIC PROFILE) Tj
+T*
+/F1 10 Tf
+(Test Description                Observed Value    Reference Range    Flag) Tj
+T*
+/F1 10 Tf
+(--------------------------------------------------------------------) Tj
+T*
+/F1 10 Tf
+(Fasting Plasma Glucose          138 mg/dL         70 - 99 mg/dL      HIGH) Tj
+T*
+/F1 10 Tf
+(Hemoglobin A1c \(HbA1c\)          7.4 %             4.0 - 5.6 %        HIGH) Tj
+T*
+/F1 10 Tf
+(Estimated Avg Glucose \(eAG\)     165 mg/dL         70 - 126 mg/dL     HIGH) Tj
+T*
+/F1 10 Tf
+(Serum Creatinine                0.95 mg/dL        0.50 - 1.10 mg/dL  NORMAL) Tj
+T*
+/F1 10 Tf
+(eGFR \(CKD-EPI\)                  88 mL/min/1.73m2  >= 90 mL/min       NORMAL) Tj
+T*
+/F1 10 Tf
+(Blood Urea Nitrogen \(BUN\)       16 mg/dL          7 - 20 mg/dL       NORMAL) Tj
+T*
+/F1 10 Tf
+(Sodium                          141 mEq/L         135 - 145 mEq/L    NORMAL) Tj
+T*
+/F1 10 Tf
+(Potassium                       4.2 mEq/L         3.5 - 5.0 mEq/L    NORMAL) Tj
+T*
+T*
+/F2 12 Tf
+(LIPID PROFILE) Tj
+T*
+/F1 10 Tf
+(Test Description                Observed Value    Reference Range    Flag) Tj
+T*
+/F1 10 Tf
+(--------------------------------------------------------------------) Tj
+T*
+/F1 10 Tf
+(Total Cholesterol               228 mg/dL         < 200 mg/dL        HIGH) Tj
+T*
+/F1 10 Tf
+(Triglycerides                   185 mg/dL         < 150 mg/dL        BORDERLINE) Tj
+T*
+/F1 10 Tf
+(HDL Cholesterol \(Protective\)    44 mg/dL          >= 50 mg/dL        LOW) Tj
+T*
+/F1 10 Tf
+(LDL Cholesterol \(Calculated\)    147 mg/dL         < 100 mg/dL        ELEVATED) Tj
+T*
+T*
+/F2 12 Tf
+(COMPLETE BLOOD COUNT \(CBC\)) Tj
+T*
+/F1 10 Tf
+(Test Description                Observed Value    Reference Range    Flag) Tj
+T*
+/F1 10 Tf
+(--------------------------------------------------------------------) Tj
+T*
+/F1 10 Tf
+(Hemoglobin                      13.2 g/dL         12.1 - 15.1 g/dL   NORMAL) Tj
+T*
+/F1 10 Tf
+(Hematocrit                      39.8 %            36.0 - 46.0 %      NORMAL) Tj
+T*
+/F1 10 Tf
+(White Blood Cell Count \(WBC\)    6.8 x10^3/uL      4.5 - 11.0         NORMAL) Tj
+T*
+/F1 10 Tf
+(Platelets                       245 x10^3/uL      150 - 450          NORMAL) Tj
+T*
+T*
+/F2 12 Tf
+(CLINICAL LAB NOTES) Tj
+T*
+/F1 10 Tf
+(Specimen collected in fasting state. Repeated fasting blood glucose confirms initial elevated reading.) Tj
+T*
+/F1 10 Tf
+(Review recommended with primary care physician regarding glycemic management and lipid therapy.) Tj
+T*
+T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000003188 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3324
+%%EOF

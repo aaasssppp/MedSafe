@@ -44,6 +44,52 @@ def is_ocr_available() -> Tuple[bool, str]:
             "or set TESSERACT_CMD in your .env file.",
         )
 
+def extract_table_with_gemini_vision(img: "Image.Image", page_num: int) -> str:
+    """
+    Uses Gemini's vision input to read a table directly from a page image,
+    preserving row/column structure that plain OCR (pytesseract.image_to_string)
+    cannot — since plain OCR has no concept of rows or columns, only raw text.
+    """
+    import json
+    from google import genai
+
+    api_key = Config.GEMINI_API_KEY
+    if not api_key:
+        logger.warning("No GEMINI_API_KEY set; cannot run vision table extraction.")
+        return ""
+
+    prompt = """Extract every lab test row from this medical report page image.
+Return ONLY valid JSON, no other text, in this exact structure:
+{"tests": [{"test_name": "", "value": "", "unit": "", "reference_range": "", "flag": ""}]}
+If a field is unreadable, use null. Do not invent values not visible in the image.
+If there is no table on this page, return {"tests": []}."""
+
+    try:
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model=Config.LLM_MODEL,
+            contents=[prompt, img],
+        )
+        raw = response.text.strip()
+        if raw.startswith("```"):
+            raw = raw.strip("`")
+            raw = raw.replace("json", "", 1).strip()
+        data = json.loads(raw)
+    except Exception as e:
+        logger.error("Gemini vision table extraction failed on page %d: %s", page_num, e)
+        return ""
+
+    tests = data.get("tests", [])
+    if not tests:
+        return ""
+
+    rows = [
+        f"{t.get('test_name','')}: {t.get('value','')} {t.get('unit','') or ''} "
+        f"(Ref: {t.get('reference_range','')}) [{t.get('flag','')}]"
+        for t in tests
+    ]
+    return f"--- Page {page_num} (Gemini Vision Table Extraction) ---\n" + "\n".join(rows)
+
 
 def extract_text_ocr(pdf_path: str) -> Dict[str, Any]:
     """
@@ -60,16 +106,16 @@ def extract_text_ocr(pdf_path: str) -> Dict[str, Any]:
             "error": f"File not found: {pdf_path}",
         }
 
-    ocr_ok, ocr_msg = is_ocr_available()
-    if not ocr_ok:
-        logger.warning("OCR fallback requested but OCR is unavailable: %s", ocr_msg)
-        return {
-            "text": "",
-            "method": "ocr",
-            "page_count": 0,
-            "status": "ocr_unavailable",
-            "error": ocr_msg,
-        }
+    # ocr_ok, ocr_msg = is_ocr_available()
+    # if not ocr_ok:
+    #     logger.warning("OCR fallback requested but OCR is unavailable: %s", ocr_msg)
+    #     return {
+    #         "text": "",
+    #         "method": "ocr",
+    #         "page_count": 0,
+    #         "status": "ocr_unavailable",
+    #         "error": ocr_msg,
+    #     }
 
     extracted_pages = []
 
@@ -79,15 +125,21 @@ def extract_text_ocr(pdf_path: str) -> Dict[str, Any]:
 
         doc = fitz.open(pdf_path)
         page_count = len(doc)
+        tesseract_ok, _ = is_ocr_available()
 
         for page_num in range(page_count):
             page = doc[page_num]
-            # Render page to a pixmap at 200 DPI for high OCR accuracy
             pix = page.get_pixmap(dpi=200)
             img = Image.open(io.BytesIO(pix.tobytes("png")))
-            page_text = pytesseract.image_to_string(img)
-            if page_text.strip():
-                extracted_pages.append(f"--- Page {page_num + 1} (OCR) ---\n{page_text.strip()}")
+
+            page_text = extract_table_with_gemini_vision(img, page_num + 1)
+            if not page_text and tesseract_ok:
+                raw = pytesseract.image_to_string(img)
+                if raw.strip():
+                    page_text = f"--- Page {page_num + 1} (OCR) ---\n{raw.strip()}"
+            if page_text:
+                extracted_pages.append(page_text)
+    
 
         doc.close()
 

@@ -1,8 +1,8 @@
 {
   "blood_tests.pdf": {
     "file": "blood_tests.pdf",
-    "hash": "68fefed811a8b866b6d5b7391d69c9c186f9f7e17485e36ae60807c59373979c",
-    "processed_at": "2026-09-21T21:25:17.174277",
+    "hash": "f90c72bd9f650d510663bb6c2ff0348cb92f2d247f2691022655fef11c276df9",
+    "processed_at": "2026-09-24T11:03:00.952778",
     "chunks": 3,
     "chunk_ids": [
       "blood_tests.pdf__chunk_0",
@@ -14,8 +14,8 @@
   },
   "diabetes.pdf": {
     "file": "diabetes.pdf",
-    "hash": "45657b44a1f6ce4dd54bdc130e9bf0a96d11c6f501d16571a96c2d2455357eb9",
-    "processed_at": "2026-09-21T21:25:17.198957",
+    "hash": "e5dba1773d6f9f7f478b5b23b2125b1650f76a84ca9486c85e9d45ac8076e99a",
+    "processed_at": "2026-09-24T11:03:03.247053",
     "chunks": 2,
     "chunk_ids": [
       "diabetes.pdf__chunk_0",
@@ -26,8 +26,8 @@
   },
   "hypertension.pdf": {
     "file": "hypertension.pdf",
-    "hash": "d57025f198f5330f2a6014f002ec002d4e79aa1aa74bcc0e628648dea1c18cc3",
-    "processed_at": "2026-09-21T21:25:17.225507",
+    "hash": "8483e7a5757ae979bd40e3ca18034b5e960910d6378e543bcc027580cf5d7676",
+    "processed_at": "2026-09-24T11:03:05.451013",
     "chunks": 3,
     "chunk_ids": [
       "hypertension.pdf__chunk_0",
@@ -39,13 +39,104 @@
   },
   "medications.pdf": {
     "file": "medications.pdf",
-    "hash": "15165354e5a5978a2158137039d6024da4007d80d08fa1f20ce573f2866d9333",
-    "processed_at": "2026-09-21T21:27:25.240479",
+    "hash": "8da6401bd79a3f0b0603bf3590207887d9ce9b88be44b9189842d9e0549e6993",
+    "processed_at": "2026-09-24T11:03:07.234300",
     "chunks": 3,
     "chunk_ids": [
       "medications.pdf__chunk_0",
       "medications.pdf__chunk_1",
       "medications.pdf__chunk_2"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 1.PDF": {
+    "file": "sample_report 1.PDF",
+    "hash": "bf9419c70fde6c6794c00b0dca6c77cf0e6c428b2fb819d1ac6ee4bf93178d34",
+    "processed_at": "2026-09-24T11:03:08.177791",
+    "chunks": 1,
+    "chunk_ids": [
+      "sample_report 1.PDF__chunk_0"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 2.PDF": {
+    "file": "sample_report 2.PDF",
+    "hash": "9c348371aa327777400b479fe6ad2b1a5118877e065781007567d6ed276cc678",
+    "processed_at": "2026-09-24T11:03:09.857996",
+    "chunks": 2,
+    "chunk_ids": [
+      "sample_report 2.PDF__chunk_0",
+      "sample_report 2.PDF__chunk_1"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 3.PDF": {
+    "file": "sample_report 3.PDF",
+    "hash": "a3e5688e71b4e0a5d97538ea2c545cbbaf5439af2c692a876189f10bba27eda8",
+    "processed_at": "2026-09-24T11:03:10.452269",
+    "chunks": 1,
+    "chunk_ids": [
+      "sample_report 3.PDF__chunk_0"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 4.PDF": {
+    "file": "sample_report 4.PDF",
+    "hash": "135f7ca348730a09e7c9734002e27e93d2b67133a54d050c4213445569fb0996",
+    "processed_at": "2026-09-24T11:03:11.135638",
+    "chunks": 1,
+    "chunk_ids": [
+      "sample_report 4.PDF__chunk_0"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 5.PDF": {
+    "file": "sample_report 5.PDF",
+    "hash": "15b524fe3d757e3bb9fc26642e5625a6bb57064bbdfab3fa4201d9c61bc9bbd5",
+    "processed_at": "2026-09-24T11:03:11.887837",
+    "chunks": 1,
+    "chunk_ids": [
+      "sample_report 5.PDF__chunk_0"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 6.PDF": {
+    "file": "sample_report 6.PDF",
+    "hash": "dd603220691dfabfd629b108972be6fd6856238676e1ce4edd24d831cb58b3a8",
+    "processed_at": "2026-09-24T11:03:12.695633",
+    "chunks": 1,
+    "chunk_ids": [
+      "sample_report 6.PDF__chunk_0"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 7.PDF": {
+    "file": "sample_report 7.PDF",
+    "hash": "55d73cf4a2395ed110206f12fc4cc4a447d51e80300d0f25e206d5974a717d44",
+    "processed_at": "2026-09-24T11:03:14.360156",
+    "chunks": 2,
+    "chunk_ids": [
+      "sample_report 7.PDF__chunk_0",
+      "sample_report 7.PDF__chunk_1"
+    ],
+    "method": "digital_text",
+    "pages": 1
+  },
+  "sample_report 8.PDF": {
+    "file": "sample_report 8.PDF",
+    "hash": "b41622363947f8ad7dd0efd52f6785ae23c83c56e29d54ed7512fd94f7ddf5b1",
+    "processed_at": "2026-09-24T11:03:15.959661",
+    "chunks": 2,
+    "chunk_ids": [
+      "sample_report 8.PDF__chunk_0",
+      "sample_report 8.PDF__chunk_1"
     ],
     "method": "digital_text",
     "pages": 1

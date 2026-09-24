@@ -60,6 +60,7 @@ class MedicalRAGService:
 
     def __init__(self):
         self.embeddings = GeminiEmbeddings()
+        self.kb_embeddings = GeminiEmbeddings() 
         self.kb_vector_store: Optional[FAISS] = None
         self.user_vector_store: Optional[FAISS] = None
         self._llm_client: Optional[genai.Client] = None
@@ -86,7 +87,7 @@ class MedicalRAGService:
             try:
                 self.kb_vector_store = FAISS.load_local(
                     kb_path,
-                    self.embeddings,
+                    self.kb_embeddings,
                     allow_dangerous_deserialization=True,
                 )
                 logger.info("Successfully loaded verified medical knowledge base from %s", kb_path)
